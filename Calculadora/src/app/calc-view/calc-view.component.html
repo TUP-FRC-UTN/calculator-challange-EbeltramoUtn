@@ -1,13 +1,14 @@
 <H1>Calculadora</H1>
 <div>
     <label>Valor 1</label>
-<input (input)="valorA($event)" type="number">
+<input (input)="valorA($event)" type="number" [value]="numberA">
 </div>
 <div>
     <label>Valor 2</label>
-<input (input)="valorB($event)" type="number">
+<input (input)="valorB($event)" type="number" [value]="numberB">
 </div>
 <div>
     <label>Resultado:</label>
-    <input type="number" disabled>
+    <input type="number" [value]="result" disabled>
 </div>
+<app-calc-operator [numberA]="numberA" [numberB]="numberB" (resultEvent) = "updateResult($event)" (clearEvent)="clear()"/>
